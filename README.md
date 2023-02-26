@@ -7,17 +7,24 @@ server running on port: 7150
 client link:  http://127.0.0.1:5500/
 
 
-**Instructions: **
+**Instructions:**
+
 Open MaterCodeTest.sln in Visual Studio.
 Build and run project, swagger help guide should open in default browser.
 Open the MaterWebClient files in Visual Studio Code.
 Select the Go Live option in the bottom right corner.
 
+
+
 **Summary**
+
 I have built this app to match the sample format in the criteria documentation. the backend has been built in Visual Studio 2022 using an ASP.NET API framework. Thew front end was built in Visual Studio Code with a basic js, index, and css files. For simplicity, I have limited the web app for a single page. Ideally a real world version would have other pages to review or alter patients / admitions / staff data.
 
 
+
+
 **Using the Client**
+
 On load, the page will generate a table of the current Beds and their availability, as well as the summary totals below.
 For testing purposes, I have seeded the web app's InMemory database with the sample data taken from the testing documentation
 
@@ -38,7 +45,10 @@ Users can discharge a patient by selecting the 'Discharge' button. At which poin
 
 Upon any changes made by a user, the page will automatically refresh.
 
+
+
 **Assumptions Made**
+
 Comments are assigned automatically when a patient is created, admitted, or discharged. for simplicity I set the staffID value on these comments = 1. In a real world example, users would first need to log in and the info would be taken automatically from their accounts.
 
 the API used to lodged patients, comments and admittions can all be used to update the existing data as well. however, this functionality was not implemented on the client due to time constraints and noting it is not a required feature.
