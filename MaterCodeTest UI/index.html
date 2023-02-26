@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Availability</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css">
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript" 
+    src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js"></script>
+</head>
+<body>
+    <!-- If you have the time, add pages for all patients and admitions
+         <div class="Header">
+        <button>Home</button>
+        <button onclick="location.href = '/Patients';" id="myButton" class="float-left submit-button" >Patients</button>
+        <button onclick="location.href = '/Admitions';" id="myButton" class="float-left submit-button" >Admitions</button>
+    </div> -->
+    <h1>Beds</h1>
+    <div class="BedTableContainer">
+        <table class = "table">
+            <thead>
+                <tr>
+                  <th scope="col">Bed</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Patient</th>
+                  <th scope="col">DOB</th>
+                  <th scope="col">Presenting Issues</th>
+                  <th scope="col">Last Comment</th>
+                  <th scope="col">Last Update</th>
+                  <th scope="col">Nurse</th>
+                  <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="SummaryInfo">
+        <div><h4 id="bedsInUse"></h4></div>
+        <div><h4 id="bedsFree"></h4></div>
+        <div><h4 id="TotalPatientsToday"></h4></div>
+    </div>
+    
+    <div id="AdmitWindow" class="Admit">
+        <div class="AdmitContent">
+            <span class="close">&times;</span>
+            <p>Please Enter Patient's URN</p>
+            <input id ="existingURN" type="text" placeholder="Existing Patient URN"></input>
+            <div class = "btnHolder">
+                <button id="newBtn">New Patient</button>          
+                <button id="confirmAdmit">Admit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="NewPatientWindow" class="NewPatient">
+        <div class="NewPatientContent">
+            <span class="close">&times;</span>
+            <p> Please enter Patient details</p>
+            <div>URN: <input id ="patientURN" type="text" placeholder="patientURN"></input></div>
+            <div>First Name: <input id ="patientFirstName" type="text" placeholder="First Name"></input></div>
+            <div>Last Name: <input id ="patientLastName" type="text" placeholder="Last Name"></input></div>
+            <div>DOB: <input id ="patientDOB" type="date" placeholder="DOB"></input></div>
+            <div>Presenting Issues: <textarea id ="patientIssues" type="text" placeholder="Presenting Issues"></textarea></div>
+            <div class = "btnHolder">
+                <button id="confirmNewPatientAdmit">Admit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="DischargeWindow" class="Discharge">
+        <div class="DischargeContent">
+            <span class="close">&times;</span>
+            <p> Are you sure you want to Discharge?</p>
+            <div class = "btnHolder">
+                <button id="confirmDischarge">Yes</button>
+             <button id ="cancelDischarge">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="CommentWindow" class="Comment">
+        <div class="CommentContent">
+            <span class="close">&times;</span>
+            <input id="commentStaff" placeholder="StaffID"></input>
+            <p> Please enter comment below</p>
+            <textarea id = "commentText" placeholder="Comments"></textarea>
+            <div class = "btnHolder">
+                <button id="saveComment">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="PatientWindow" class="PatientDetails">
+        <div class = "PatientDetailsContent">
+            <span class="close">&times;</span>
+            <div id="patientData"></div>
+            <table id="commentTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Nurse</th>
+                        <th scope="col">Comment</th>
+                    </tr>
+                </thead>
+                <tbody id="PatientComments"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
