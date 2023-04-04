@@ -18,7 +18,9 @@ Select the Go Live option in the bottom right corner.
 
 **Summary**
 
-I have built this app to match the sample format in the criteria documentation. the backend has been built in Visual Studio 2022 using an ASP.NET API framework. Thew front end was built in Visual Studio Code with a basic js, index, and css files. For simplicity, I have limited the web app for a single page. Ideally a real world version would have other pages to review or alter patients / admitions / staff data.
+I have built this app to match the sample format in the criteria documentation. the backend has been built in Visual Studio 2022 using an ASP.NET API framework. The front end was built in Visual Studio Code with a basic js, index, and css files. For simplicity, I have limited the web app for a single page. Ideally a real world version would have other pages to review or alter patients / admitions / staff data.
+
+The criteria indicated the desire for a basic web app to preview the use of RESTapis, as such a very simple web application was created purposely avoiding more complex elements like DTO Classes for the sake of simplicity.
 
 
 
